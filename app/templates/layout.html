@@ -1,19 +1,14 @@
 <!doctype html>
 <html>
   <head>
-  
-
-     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
     <style>
       {% block styles %}{% endblock %}
 
-      #alert{
+      #alert {
         width: 80vw;
         height: 50px;
         padding: 15px;
@@ -25,14 +20,13 @@
         z-index: 10;
       }
 
-      #close{
+      #close {
         font-size: 25px;
         position: absolute;
         top: 10px;
         right: 10px;
       }
     </style>
-
   </head>
   <body>
     <nav class="blue">
@@ -42,21 +36,7 @@
       </div>
     </nav>
 
-    <div id="content" >
-    
-      {% with messages = get_flashed_messages(request) %}
-      {% if messages %}
-  
-        <div id="alert" class="blue lighten-5 col s10 offset-s1">     
-          {% for message in messages %}
-            <div style="font-weight: bold;text-align: center;font-size: 1.2em;margin-top: -5px;">{{ message['message'] }}</div>
-          {% endfor %}
-          <a href="" id="close">&times;</a>
-        </div>  
-  
-      {% endif %}
-      {% endwith %}
- 
+    <div id="content">
       {% block content %}{% endblock %}
     </div>
 

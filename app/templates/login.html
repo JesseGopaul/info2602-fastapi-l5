@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% block title %}Login{% endblock %}
 {% block page %}Login{% endblock %}
 
@@ -8,7 +9,27 @@
     </ul>
 {% endblock %}
 
-
 {% block content %}
+<main class="container" style="margin-top:100px">
+   <form class="card col s12" id="loginForm" method="POST" action="/login" style="padding:1em">
 
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Enter username" name="username" type="text" class="validate" required>
+          <label for="username">Username</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="password" type="password" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      
+      <div class="card-action row">
+        <input type="submit" class="blue text-white btn right" value="Login">
+      </div>
+  </form>
+</main>
 {% endblock %}
